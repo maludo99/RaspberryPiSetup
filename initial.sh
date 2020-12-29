@@ -58,7 +58,7 @@ read -p "Do you want to leave ssh Password Login enabled? [y/n] " yn
         [Yy]* ) break;;
         [Nn]* ) 
 		    echo "Please copy the id_rsa file from ~/.ssh/ to your machine."
-		    read -p "Use the following command: ssh pi@raspberrypi:/.ssh/id_rsa %UserProfile%\\Desktop\\ "
+		    read -p "Use the following command: sftp pi@raspberrypi:/.ssh/id_rsa %UserProfile%\\Desktop\\ "
 		    sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 		    sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 		    break ;;
