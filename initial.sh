@@ -24,7 +24,7 @@ sed -e 's/$//' -e 's/^\s*/\/usr\/bin\/raspi-config nonint /' | bash -x -
 #do_ssh 1                  # Enable remote ssh login
  
 # System Configuration
-do_configure_keyboard us
+do_configure_keyboard de
 do_hostname ${host}
 do_change_timezone Europe/Berlin
 do_change_locale LANG=de_DE.UTF-8
@@ -70,8 +70,10 @@ done
 
 #Changing SSH Port for security reasons
 
-sudo sed -i 's/#Port 22/Port 784/g' /etc/ssh/sshd_config
-sudo sed -i 's/Port 22/Port 784/g' /etc/ssh/sshd_config
+read -p "Which port should ssh use? (Default: 22) " port
+
+sudo sed -i 's/#Port 22/Port $port/g' /etc/ssh/sshd_config
+sudo sed -i 's/Port 22/Port $port/g' /etc/ssh/sshd_config
 
 
 
