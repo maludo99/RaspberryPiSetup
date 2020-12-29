@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#set -x
+set -x
 
-echo "Running automated raspi-config tasks"
+#echo "Running automated raspi-config tasks"
 sudo apt-get update && sudo apt-get -y upgrade
 
  
