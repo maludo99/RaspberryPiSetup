@@ -43,8 +43,8 @@ touch /home/pi/.ssh/authorized_keys
 chmod 700 /home/pi/.ssh
 chmod 600 /home/pi/.ssh/authorized_keys
 ssh-keygen -f /home/pi/.ssh/id_rsa -q -N ""
-cat /home/pi/id_rsa.pub >> /home/pi/authorized_keys
-sudo rm /home/pi/id_rsa.pub
+cat /home/pi/.ssh/id_rsa.pub >> /home/pi/.ssh/authorized_keys
+sudo rm /home/pi/.ssh/id_rsa.pub
 
 sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
 
